@@ -8,19 +8,6 @@ let data = fetch(dataUrl)
 
 data.then(result => displayData(result));
 
-async function getJson(url) {
-  let response = await fetch(url);
-  let data = await response.json()
-  return data;
-}
-
-async function main() {
-  jsondata = await getJson(dataUrl);
-  console.log(jsondata);
-}
-
-main();
-
 const prevParagraph = {weekly: "Last Week - ", daily: "Yesterday - ", monthly: "Last month - "};
 /* for each element in the data arr, going to create a section + a bunch of children to go in it,
  and append it to main*/
@@ -30,8 +17,15 @@ function displayData(result) {
   for (const elem of result) {
     const section = document.createElement("section");
     section.classList.add("category");
-    section.classList.add(elem.title.toLowerCase().replace(/\s+/g, '')); //take out the space in "self care"
+    const name = elem.title.toLowerCase().replace(/\s+/g, '-'); //take out the space in "self care", replace with hyphen
+    section.classList.add(name); 
 
+    const imgUrl = `./images/icon-${name}.svg`;
+    const image = document.createElement("img");
+    image.setAttribute("src", imgUrl);
+    image.setAttribute("alt", `${name} icon`);
+
+    section.appendChild(image);
 
     const titleDiv = document.createElement("div");
     titleDiv.classList.add("section-heading");
@@ -45,8 +39,6 @@ function displayData(result) {
 
     titleDiv.appendChild(title);
     titleDiv.appendChild(ellipsis);
-
-    section.appendChild(titleDiv);
 
     const sectionInfo = document.createElement("div");
     sectionInfo.classList.add("section-info");
@@ -64,6 +56,7 @@ function displayData(result) {
 
     pPrev.appendChild(span);
 
+    sectionInfo.appendChild(titleDiv);
     sectionInfo.appendChild(pCurr);
     sectionInfo.appendChild(pPrev);
 
