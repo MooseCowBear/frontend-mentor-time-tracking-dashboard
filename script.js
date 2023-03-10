@@ -30,12 +30,14 @@ function displayData(result) {
   for (const elem of result) {
     const section = document.createElement("section");
     section.classList.add("category");
+    section.classList.add(elem.title.toLowerCase().replace(/\s+/g, '')); //take out the space in "self care"
+
 
     const titleDiv = document.createElement("div");
     titleDiv.classList.add("section-heading");
 
     const title = document.createElement("h2");
-    title.innerText = elem["title"]; 
+    title.innerText = elem.title; 
 
     const ellipsis = document.createElement("img");
     ellipsis.setAttribute("src", "./images/icon-ellipsis.svg");
