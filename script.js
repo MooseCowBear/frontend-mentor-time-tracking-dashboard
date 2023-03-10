@@ -22,13 +22,12 @@ async function main() {
 main();
 
 const prevParagraph = {weekly: "Last Week - ", daily: "Yesterday - ", monthly: "Last month - "};
-// for each element in the data arr, going to create a section and append it to main
+/* for each element in the data arr, going to create a section + a bunch of children to go in it,
+ and append it to main*/
 function displayData(result) {
-  console.log("this is the data", result)
   const parent = document.getElementById("main");
 
   for (const elem of result) {
-    console.log("elem", elem);
     const section = document.createElement("section");
     section.classList.add("category");
 
@@ -50,12 +49,8 @@ function displayData(result) {
     const sectionInfo = document.createElement("div");
     sectionInfo.classList.add("section-info");
 
-    //need the two paragraphs + span
     const pCurr = document.createElement("p");
     pCurr.classList.add("curr");
-    console.log(elem);
-    console.log(elem.timeframes);
-    console.log(elem.timeframes[selection].current);
     pCurr.innerText = elem.timeframes[selection].current;
 
     const pPrev = document.createElement("p");
@@ -74,3 +69,7 @@ function displayData(result) {
     parent.appendChild(section);
   }
 }
+
+//need event listener for buttons, change selection, update innertext
+
+//want error display
