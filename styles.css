@@ -151,18 +151,23 @@ button.selected {
 .work {
   background-color: var(--work);
 }
+
 .play {
   background-color: var(--play);
 }
+
 .study {
   background-color: var(--study);
 }
+
 .exercise {
   background-color: var(--exercise);
 }
+
 .social {
   background-color: var(--social);
 }
+
 .self-care {
   background-color: var(--self-care);
 }
@@ -171,6 +176,7 @@ button.selected {
   height: 9.7em;
   position: relative;
 }
+
 .category > img {
   float: right; /* the background img */
 }
@@ -224,9 +230,11 @@ button:hover, button:focus{
   cursor: pointer;
   color: white;
 }
+
 .section-heading > img:hover {
   cursor: pointer;
 }
+
 .section-info:hover, .section-info:focus {
   filter: brightness(170%);
 }
@@ -264,8 +272,18 @@ button:hover, button:focus{
     justify-content: space-between;
   }
 }
+
 @media only screen and (max-width: 350px) {
   main {
     margin: 1em;
   }
+}
+
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+}
+
+.attribution a {
+  color: white;
 }
