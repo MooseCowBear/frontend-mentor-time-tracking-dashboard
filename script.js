@@ -43,22 +43,27 @@ function displayData(result) {
     const sectionInfo = document.createElement("div");
     sectionInfo.classList.add("section-info");
 
+    const paragraphDiv = document.createElement("div");
+    paragraphDiv.classList.add("paragraph-wrapper");
+
     const pCurr = document.createElement("p");
     pCurr.classList.add("curr");
-    pCurr.innerText = elem.timeframes[selection].current;
+    pCurr.innerText = `${elem.timeframes[selection].current}hrs`;
 
     const pPrev = document.createElement("p");
     pPrev.classList.add("prev");
     pPrev.innerText = prevParagraph[selection]; 
 
     const span = document.createElement("span");
-    span.innerText = elem.timeframes[selection].previous;
+    span.innerText = `${elem.timeframes[selection].previous}hrs`;
 
     pPrev.appendChild(span);
 
+    paragraphDiv.appendChild(pCurr);
+    paragraphDiv.appendChild(pPrev);
+
     sectionInfo.appendChild(titleDiv);
-    sectionInfo.appendChild(pCurr);
-    sectionInfo.appendChild(pPrev);
+    sectionInfo.appendChild(paragraphDiv);
 
     section.appendChild(sectionInfo);
     parent.appendChild(section);
