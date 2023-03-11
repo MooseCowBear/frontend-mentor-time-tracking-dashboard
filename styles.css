@@ -73,4 +73,160 @@ a:not([class]) {
 body {
   font-family: "Rubik", sans-serif;
   font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  background-color: var(--background);
+  color: white;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 10em);
+  gap: 1.3em;
+}
+
+section {
+  border-radius: 0.6em;
+}
+
+.user {
+  grid-row: 1 / 3;
+  background-color: var(--background-section);
+}
+
+.user-info {
+  background-color: var(--profile);
+  border-radius: inherit;
+  padding: 1.5rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.7em;
+}
+
+h1 > span {
+  font-size: 0.4em;
+  font-weight: 300;
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+h1 {
+  font-weight: 300;
+  line-height: 1.3;
+  margin-bottom: 1.7rem;
+  letter-spacing: 1px;
+}
+
+.user img {
+  width: 3.5em;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.timeframe {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: 0.7rem 1.3rem;
+  height: 30%;
+}
+
+button {
+  border: transparent;
+  background-color: transparent;
+  color: var(--text-secondary);
+  font-size: 0.7em;
+}
+
+button.selected {
+  color: white;
+}
+
+.work {
+  background-color: var(--work);
+}
+.play {
+  background-color: var(--play);
+}
+.study {
+  background-color: var(--study);
+}
+.exercise {
+  background-color: var(--exercise);
+}
+.social {
+  background-color: var(--social);
+}
+.self-care {
+  background-color: var(--self-care);
+}
+
+.category {
+  height: 9.7em;
+  position: relative;
+}
+.category > img {
+  float: right; /* the background img */
+}
+
+.section-info {
+  background-color: var(--background-section);
+  border-radius: inherit;
+  height: 85%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.3rem;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section-heading > img { /* ellipsis */
+  width: 0.9em;
+}
+
+h2 {
+  font-size: 0.7em;
+  font-weight: 400;
+}
+
+.paragraph-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.curr {
+  font-size: 2.1em;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.prev {
+  font-size: 0.7em;
+  font-weight: 300;
+  color: var(--text-primary);
+}
+
+/* active states */
+button:hover, button:focus{
+  cursor: pointer;
+  color: white;
+}
+.section-heading > img:hover {
+  cursor: pointer;
+}
+.section-info:hover, .section-info:focus-within {
+  filter: brightness(170%);
 }
