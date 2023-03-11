@@ -9,13 +9,12 @@ async function getData() {
     return await result.json();
   }
   catch (error) {
-    displayError(error);
+    console.log(error);
   }
 }
 
 async function updateDOM() {
-  const categories = await getData();
-  //createDisplayElements(categories);
+  const categories = await getData().catch(error => displayError(error));
   createDisplayElements(categories);
   //call to updateDisplayInfo to put the data in the right elements
   updateDisplayInfo(categories);
@@ -139,11 +138,10 @@ function updateSelectedClass(target) {
 
 //want error display
 function displayError(error) {
-  console.log(error);
   const errorDiv = document.createElement("div");
   errorDiv.classList.add("error"); //need to style this
   errorDiv.innerText = "Oh no! Something went wrong.";
 
   const parent = document.getElementById("main");
-  parent.appendChild("error");
+  parent.appendChild(errorDiv);
 }
