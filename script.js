@@ -42,6 +42,7 @@ function displayData(result) {
 
     const sectionInfo = document.createElement("div");
     sectionInfo.classList.add("section-info");
+    sectionInfo.setAttribute("tabindex", 0);
 
     const paragraphDiv = document.createElement("div");
     paragraphDiv.classList.add("paragraph-wrapper");
