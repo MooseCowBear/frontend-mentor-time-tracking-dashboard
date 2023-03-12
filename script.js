@@ -71,6 +71,7 @@ function addTitleDiv(parent, elem) {
   const ellipsis = document.createElement("img");
   ellipsis.setAttribute("src", "./images/icon-ellipsis.svg");
   ellipsis.setAttribute("alt", "ellipsis");
+  ellipsis.setAttribute("tabindex", 0);
 
   titleDiv.appendChild(title);
   titleDiv.appendChild(ellipsis);
