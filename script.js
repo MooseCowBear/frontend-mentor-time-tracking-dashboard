@@ -15,10 +15,11 @@ async function getData() {
 
 async function updateDOM() {
   const categories = await getData().catch(error => displayError(error));
+  //make dom elements where data will live
   createDisplayElements(categories);
-  //call to updateDisplayInfo to put the data in the right elements
+  //put the data in the right elements
   updateDisplayInfo(categories);
-  //call add button listeners
+  //add button listeners
   addButtonListeners(categories);
 }
 
