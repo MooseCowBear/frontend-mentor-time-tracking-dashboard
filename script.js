@@ -65,7 +65,7 @@ function addTitleDiv(parent, elem) {
   titleDiv.classList.add("section-heading");
   //add title 
   const title = document.createElement("h2");
-  title.innerText = elem.title; 
+  title.textContent = elem.title; 
   //and ellipsis
   const ellipsis = document.createElement("img");
   ellipsis.setAttribute("src", "./images/icon-ellipsis.svg");
@@ -94,7 +94,7 @@ function addParagraphDiv(parent){
   parent.appendChild(paragraphDiv);
 }
 
-//need event listener for buttons, change selection, update innertext
+//need event listener for buttons, change selection, update text
 function addButtonListeners(result) {
   const buttonWrapper = document.querySelector(".timeframe");
   buttonWrapper.addEventListener("click", (event) => {
@@ -110,14 +110,14 @@ function updateDisplayInfo(result, target=null) {
     const selector = getName(elem); //name of category
 
     const theSpan = document.querySelector(`.${selector} span`); 
-    theSpan.innerText = `${elem.timeframes[selection].previous}hrs`; 
+    theSpan.textContent = `${elem.timeframes[selection].previous}hrs`; 
 
     const pPrev = document.querySelector(`.${selector} .prev`);
-    pPrev.innerText = prevParagraph[selection]; 
+    pPrev.textContent = prevParagraph[selection]; 
     pPrev.appendChild(theSpan);
 
     const pCurr = document.querySelector(`.${selector} .curr`);
-    pCurr.innerText = `${elem.timeframes[selection].current}hrs`;
+    pCurr.textContent = `${elem.timeframes[selection].current}hrs`;
   }
   if (target) {
     updateSelectedClass(target); 
@@ -140,7 +140,7 @@ function updateSelectedClass(target) {
 function displayError(error) {
   const errorDiv = document.createElement("div");
   errorDiv.classList.add("error"); //need to style this
-  errorDiv.innerText = "Oh no! Something went wrong.";
+  errorDiv.textContent = "Oh no! Something went wrong.";
 
   const parent = document.getElementById("main");
   parent.appendChild(errorDiv);
