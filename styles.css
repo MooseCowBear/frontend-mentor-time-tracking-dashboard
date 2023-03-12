@@ -197,10 +197,12 @@ button.selected {
 .section-heading {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .section-heading > img { /* ellipsis */
   width: 0.9em;
+  height: 0.25em; /* for chrome  */
 }
 
 h2 {
