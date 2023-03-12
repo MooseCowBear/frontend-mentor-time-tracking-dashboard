@@ -137,10 +137,9 @@ function updateSelectedClass(target) {
   target.classList.add("selected");
 }
 
-//want error display
 function displayError(error) {
   const errorDiv = document.createElement("div");
-  errorDiv.classList.add("error"); //need to style this
+  errorDiv.classList.add("error"); 
   errorDiv.textContent = "Oh no! Something went wrong.";
 
   const parent = document.getElementById("main");
