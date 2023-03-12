@@ -26,6 +26,10 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 
+## Helpful Resource
+
+- This [post](https://kellegous.com/j/2013/02/27/innertext-vs-textcontent/) on the difference between innerText and innerContent.
+
 ## Author
 
 - GitHub - [MooseCowBear](https://github.com/MooseCowBear)
